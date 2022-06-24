@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef07be7-d539-4cdd-b78f-aaaa24a394b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/models/Aluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/models/Curso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/models/Disciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/models/Docente.java" afterDir="false" />
-    </list>
+    <list default="true" id="7ef07be7-d539-4cdd-b78f-aaaa24a394b7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
