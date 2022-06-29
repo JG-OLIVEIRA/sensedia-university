@@ -12,15 +12,14 @@ public class AlunoRepositoryImpl implements AlunoRepository {
     public Aluno createAluno(Aluno aluno) {
         try(Connection connection = ConnectionFactory.createConnection()){
 
-            String query = "INSERT INTO aluno (ID, NOME, SOBRENOME, MATRICULA, ANO) values (?, ?, ?, ?)";
+            String query = "INSERT INTO aluno (NOME, SOBRENOME, MATRICULA, ANO) values (?, ?, ?, ?)";
 
             PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-            myStat.setInt(1,  aluno.getId());
-            myStat.setString(2, aluno.getNome());
-            myStat.setString(3, aluno.getSobrenome());
-            myStat.setString(4, aluno.getMatricula());
-            myStat.setInt(5, aluno.getAno());
+            myStat.setString(1, aluno.getNome());
+            myStat.setString(2, aluno.getSobrenome());
+            myStat.setString(3, aluno.getMatricula());
+            myStat.setInt(4, aluno.getAno());
 
             myStat.executeUpdate();
 
@@ -28,10 +27,6 @@ public class AlunoRepositoryImpl implements AlunoRepository {
 
             if(result.next()){
                 aluno.setId(result.getInt(1));
-                aluno.setNome(result.getString(2));
-                aluno.setSobrenome(result.getString(3));
-                aluno.setMatricula(result.getString(4));
-                aluno.setAno(result.getInt(result.getInt(5)));
             }
 
         } catch (SQLException ex){

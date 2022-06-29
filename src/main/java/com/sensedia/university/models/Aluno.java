@@ -47,4 +47,9 @@ public class Aluno {
     public void setAno(Integer ano) {
         this.ano = ano;
     }
+
+    @Override
+    public String toString() {
+        return "[Nome: " + this.nome + ", Sobrenome: " + this.sobrenome + ", Matricula: " + this.matricula + ", Ano: " + this.ano + "]";
+    }
 }
