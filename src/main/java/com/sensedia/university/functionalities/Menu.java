@@ -3,12 +3,15 @@ package com.sensedia.university.functionalities;
 import com.sensedia.university.exceptions.InvalidInput;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
+import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.models.Docente;
 import com.sensedia.university.services.AlunoService;
 import com.sensedia.university.services.CursoService;
+import com.sensedia.university.services.DisciplinaService;
 import com.sensedia.university.services.DocenteService;
 import com.sensedia.university.services.impl.AlunoServiceImpl;
 import com.sensedia.university.services.impl.CursoServiceImpl;
+import com.sensedia.university.services.impl.DisciplinaServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
 import com.sensedia.university.utils.CheckIntegerInput;
 
@@ -22,6 +25,8 @@ public class Menu {
     DocenteService docenteService = new DocenteServiceImpl();
 
     CursoService cursoService = new CursoServiceImpl();
+
+    DisciplinaService disciplinaService = new DisciplinaServiceImpl();
 
     public void showWelcomeMessage(){
         System.out.println("");
@@ -104,4 +109,24 @@ public class Menu {
         System.out.println(curso);
     }
 
+    public void createDisciplina(){
+        Disciplina disciplina = new Disciplina();
+
+        System.out.println("Nome:");
+        String nome = scanner.next();
+
+        System.out.println("Turno:");
+        String turno = scanner.next();
+
+        System.out.println("Sala:");
+        Integer sala = scanner.nextInt();
+
+        disciplina.setNome(nome);
+        disciplina.setTurno(turno);
+        disciplina.setSala(sala);
+
+        disciplina = disciplinaService.createDisciplina(disciplina);
+
+        System.out.println(disciplina);
+    }
 }

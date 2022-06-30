@@ -24,6 +24,9 @@ public class Application {
             case 3:
                 menu.createCurso();
                 break;
+            case 4:
+                menu.createDisciplina();
+                break;
             default:
                 System.out.println("Opção inválida.");
         }
