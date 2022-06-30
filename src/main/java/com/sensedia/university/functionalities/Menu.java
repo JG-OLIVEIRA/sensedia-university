@@ -2,8 +2,11 @@ package com.sensedia.university.functionalities;
 
 import com.sensedia.university.exceptions.InvalidInput;
 import com.sensedia.university.models.Aluno;
+import com.sensedia.university.models.Docente;
 import com.sensedia.university.services.AlunoService;
+import com.sensedia.university.services.DocenteService;
 import com.sensedia.university.services.impl.AlunoServiceImpl;
+import com.sensedia.university.services.impl.DocenteServiceImpl;
 import com.sensedia.university.utils.CheckIntegerInput;
 
 import java.util.Scanner;
@@ -13,6 +16,7 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
 
     AlunoService alunoService = new AlunoServiceImpl();
+    DocenteService docenteService = new DocenteServiceImpl();
 
     public void showWelcomeMessage(){
         System.out.println("");
@@ -64,6 +68,22 @@ public class Menu {
         aluno = alunoService.createAluno(aluno);
 
         System.out.println(aluno);
+    }
+
+    public void createDocente(){
+        Docente docente = new Docente();
+
+        System.out.println("Nome:");
+        String nome = scanner.next();
+        System.out.println("Sobrenome:");
+        String sobrenome = scanner.next();
+
+        docente.setNome(nome);
+        docente.setSobrenome(sobrenome);
+
+        docente = docenteService.createDocente(docente);
+
+        System.out.println(docente);
     }
 
 }
