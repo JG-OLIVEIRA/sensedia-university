@@ -12,12 +12,11 @@ public class CursoRepositoryImpl implements CursoRepository {
     public Curso createCurso(Curso curso) {
         try(Connection connection = ConnectionFactory.createConnection()){
 
-            String query = "INSERT INTO curso (ID, NOME) values (?, ?)";
+            String query = "INSERT INTO curso (NOME) values (?)";
 
             PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-            myStat.setInt(1,  curso.getId());
-            myStat.setString(2, curso.getNome());
+            myStat.setString(1, curso.getNome());
 
             myStat.executeUpdate();
 
@@ -25,7 +24,6 @@ public class CursoRepositoryImpl implements CursoRepository {
 
             if(result.next()){
                 curso.setId(result.getInt(1));
-                curso.setNome(result.getString(2));
             }
 
         } catch (SQLException ex){

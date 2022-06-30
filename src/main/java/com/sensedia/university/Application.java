@@ -21,6 +21,9 @@ public class Application {
             case 2:
                 menu.createDocente();
                 break;
+            case 3:
+                menu.createCurso();
+                break;
             default:
                 System.out.println("Opção inválida.");
         }

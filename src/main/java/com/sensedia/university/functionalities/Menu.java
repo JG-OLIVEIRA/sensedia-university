@@ -2,10 +2,13 @@ package com.sensedia.university.functionalities;
 
 import com.sensedia.university.exceptions.InvalidInput;
 import com.sensedia.university.models.Aluno;
+import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Docente;
 import com.sensedia.university.services.AlunoService;
+import com.sensedia.university.services.CursoService;
 import com.sensedia.university.services.DocenteService;
 import com.sensedia.university.services.impl.AlunoServiceImpl;
+import com.sensedia.university.services.impl.CursoServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
 import com.sensedia.university.utils.CheckIntegerInput;
 
@@ -17,6 +20,8 @@ public class Menu {
 
     AlunoService alunoService = new AlunoServiceImpl();
     DocenteService docenteService = new DocenteServiceImpl();
+
+    CursoService cursoService = new CursoServiceImpl();
 
     public void showWelcomeMessage(){
         System.out.println("");
@@ -84,6 +89,19 @@ public class Menu {
         docente = docenteService.createDocente(docente);
 
         System.out.println(docente);
+    }
+
+    public void createCurso(){
+        Curso curso = new Curso();
+
+        System.out.println("Nome:");
+        String nome = scanner.next();
+
+        curso.setNome(nome);
+
+        curso = cursoService.createCurso(curso);
+
+        System.out.println(curso);
     }
 
 }
