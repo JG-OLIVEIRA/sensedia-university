@@ -23,6 +23,6 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "[Nome: " + this.nome + "]";
+        return "[Id: " + this.id + ", Nome: " + this.nome + "]";
     }
 }

@@ -49,6 +49,6 @@ public class Docente {
 
     @Override
     public String toString() {
-        return "[Nome: " + this.nome + ", Sobrenome: " + this.sobrenome + ", Matricula: " + this.matricula + ", Ano: " + this.ano + "]";
+        return "[Id: " + this.id + ", Nome: " + this.nome + ", Sobrenome: " + this.sobrenome + ", Matricula: " + this.matricula + ", Ano: " + this.ano + "]";
     }
 }

@@ -1,4 +1,4 @@
-<h1 align="center">University System</h1>
+<h1 align="center">Sensedia University</h1>
 
 <img src=".../../diagrama.png"/></a>
 

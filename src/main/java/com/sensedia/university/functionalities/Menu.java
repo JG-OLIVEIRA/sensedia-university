@@ -23,9 +23,7 @@ public class Menu {
 
     AlunoService alunoService = new AlunoServiceImpl();
     DocenteService docenteService = new DocenteServiceImpl();
-
     CursoService cursoService = new CursoServiceImpl();
-
     DisciplinaService disciplinaService = new DisciplinaServiceImpl();
 
     public void showWelcomeMessage(){
@@ -41,6 +39,7 @@ public class Menu {
         System.out.println("2 - Matricular um docente");
         System.out.println("3 - Incluir um curso");
         System.out.println("4 - Incluir uma disciplina");
+        System.out.println("5 - Sair da aplicação");
         System.out.println("");
     }
 
@@ -51,7 +50,7 @@ public class Menu {
         String option;
 
         while (true){
-            option = scanner.next();
+            option = scanner.nextLine();
 
             try {
                 return CheckIntegerInput.verify(option);
@@ -68,9 +67,9 @@ public class Menu {
         Aluno aluno = new Aluno();
 
         System.out.println("Nome:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.println("Sobrenome:");
-        String sobrenome = scanner.next();
+        String sobrenome = scanner.nextLine();
 
         aluno.setNome(nome);
         aluno.setSobrenome(sobrenome);
@@ -84,9 +83,9 @@ public class Menu {
         Docente docente = new Docente();
 
         System.out.println("Nome:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.println("Sobrenome:");
-        String sobrenome = scanner.next();
+        String sobrenome = scanner.nextLine();
 
         docente.setNome(nome);
         docente.setSobrenome(sobrenome);
@@ -100,7 +99,7 @@ public class Menu {
         Curso curso = new Curso();
 
         System.out.println("Nome:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
 
         curso.setNome(nome);
 
@@ -113,7 +112,7 @@ public class Menu {
         Disciplina disciplina = new Disciplina();
 
         System.out.println("Nome:");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
 
         System.out.println("Turno:");
         String turno = scanner.next();

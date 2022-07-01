@@ -41,6 +41,6 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return "[Nome: " + this.nome + ", Turno: " + this.turno + ", Sala: " + this.sala + "]";
+        return "[Id: " + this.id + ", Nome: " + this.nome + ", Turno: " + this.turno + ", Sala: " + this.sala + "]";
     }
 }

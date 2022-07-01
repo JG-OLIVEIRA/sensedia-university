@@ -1,6 +1,10 @@
+create database if not exists sensedia_university;
+
+use sensedia_university;
+
 create table disciplina (
 	id int AUTO_INCREMENT PRIMARY KEY,
-	nome varchar(25),
+	nome varchar(50),
 	turno varchar(2),
 	sala int
 );
@@ -8,7 +12,7 @@ create table disciplina (
 create table aluno (
 	id int AUTO_INCREMENT PRIMARY KEY,
 	nome varchar(25),
-	sobrenome varchar(25),
+	sobrenome varchar(50),
 	matricula varchar(50),
 	ano int
 );
@@ -16,14 +20,14 @@ create table aluno (
 create table docente (
 	id int AUTO_INCREMENT PRIMARY KEY,
 	nome varchar(25),
-	sobrenome varchar(25),
+	sobrenome varchar(50),
 	matricula varchar(50),
 	ano int
 );
 
 create table curso (
 	id int AUTO_INCREMENT PRIMARY KEY,
-	nome varchar(25)
+	nome varchar(50)
 );
 
 
