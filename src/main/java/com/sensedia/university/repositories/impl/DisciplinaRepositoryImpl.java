@@ -12,13 +12,12 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
     public Disciplina createDisciplina(Disciplina disciplina) {
         try(Connection connection = ConnectionFactory.createConnection()){
 
-            String query = "INSERT INTO disciplina (ID, NOME, SALA) values (?, ?, ?)";
+            String query = "INSERT INTO disciplina (NOME, SALA) values (?, ?)";
 
             PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-            myStat.setInt(1, disciplina.getId());
-            myStat.setString(2, disciplina.getNome());
-            myStat.setInt(3, disciplina.getSala());
+            myStat.setString(1, disciplina.getNome());
+            myStat.setInt(2, disciplina.getSala());
 
             myStat.executeUpdate();
 
@@ -26,8 +25,6 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
 
             if(result.next()){
                 disciplina.setId(result.getInt(1));
-                disciplina.setNome(result.getString(2));
-                disciplina.setSala(result.getInt(3));
             }
 
         } catch (SQLException ex){

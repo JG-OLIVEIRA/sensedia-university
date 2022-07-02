@@ -38,4 +38,9 @@ public class Disciplina {
     public void setSala(Integer sala) {
         this.sala = sala;
     }
+
+    @Override
+    public String toString() {
+        return "[Id: " + this.id + ", Nome: " + this.nome + ", Turno: " + this.turno + ", Sala: " + this.sala + "]";
+    }
 }
