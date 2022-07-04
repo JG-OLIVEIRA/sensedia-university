@@ -32,18 +32,50 @@ public class Menu {
         System.out.println("");
     }
 
-    public void showInsertOptions(){
+    public void showMainOptions(){
         System.out.println("Escolhas as opções abaixo: ");
         System.out.println("");
-        System.out.println("1 - Matricular um aluno");
-        System.out.println("2 - Matricular um docente");
-        System.out.println("3 - Incluir um curso");
-        System.out.println("4 - Incluir uma disciplina");
+        System.out.println("1 - Aluno");
+        System.out.println("2 - Docente");
+        System.out.println("3 - Curso");
+        System.out.println("4 - Disciplina");
         System.out.println("5 - Sair da aplicação");
         System.out.println("");
     }
 
-    public Integer inputInsertOptions(){
+    public void showAlunoOptions(){
+        System.out.println("");
+        System.out.println("Aluno");
+        System.out.println("");
+        System.out.println("1 - Matricular um aluno");
+        System.out.println("");
+    }
+
+    public void showDocenteOptions(){
+        System.out.println("");
+        System.out.println("Docente");
+        System.out.println("");
+        System.out.println("1 - Matricular um docente");
+        System.out.println("");
+    }
+
+    public void showCursoOptions(){
+        System.out.println("");
+        System.out.println("Curso");
+        System.out.println("");
+        System.out.println("1 - Incluir curso");
+        System.out.println("");
+    }
+
+    public void showDisciplinaOptions(){
+        System.out.println("");
+        System.out.println("Disciplina");
+        System.out.println("");
+        System.out.println("1 - Incluir disciplina");
+        System.out.println("");
+    }
+
+    public Integer inputOptions(){
         System.out.println("");
         System.out.println("Digite a opção: ");
 
@@ -66,6 +98,9 @@ public class Menu {
     public void createAluno(){
         Aluno aluno = new Aluno();
 
+        System.out.println("");
+        System.out.println("Matriculando um aluno...");
+        System.out.println("");
         System.out.println("Nome:");
         String nome = scanner.nextLine();
         System.out.println("Sobrenome:");
@@ -82,6 +117,9 @@ public class Menu {
     public void createDocente(){
         Docente docente = new Docente();
 
+        System.out.println("");
+        System.out.println("Matriculando um docente...");
+        System.out.println("");
         System.out.println("Nome:");
         String nome = scanner.nextLine();
         System.out.println("Sobrenome:");
@@ -98,6 +136,9 @@ public class Menu {
     public void createCurso(){
         Curso curso = new Curso();
 
+        System.out.println("");
+        System.out.println("Incluindo um curso...");
+        System.out.println("");
         System.out.println("Nome:");
         String nome = scanner.nextLine();
 
@@ -111,6 +152,9 @@ public class Menu {
     public void createDisciplina(){
         Disciplina disciplina = new Disciplina();
 
+        System.out.println("");
+        System.out.println("Incluino uma disciplina...");
+        System.out.println("");
         System.out.println("Nome:");
         String nome = scanner.nextLine();
 
