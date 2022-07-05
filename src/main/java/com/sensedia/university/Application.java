@@ -26,6 +26,9 @@ public class Application {
                     switch (alunoOption){
                         case 1:
                             menu.createAluno();
+                        case 2:
+                            menu.showCursosOptions();
+                            menu.createAlunoCurso();
                     }
 
                     break;

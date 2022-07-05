@@ -48,6 +48,7 @@ public class Menu {
         System.out.println("Aluno");
         System.out.println("");
         System.out.println("1 - Matricular um aluno");
+        System.out.println("2 - Incluir um aluno em um curso");
         System.out.println("");
     }
 
@@ -171,5 +172,32 @@ public class Menu {
         disciplina = disciplinaService.createDisciplina(disciplina);
 
         System.out.println(disciplina);
+    }
+
+    public void createAlunoCurso(){
+        System.out.println("");
+        System.out.println("Incluino um aluno em um curso...");
+        System.out.println("");
+        System.out.println("Entre com o id do curso: ");
+        Integer id = scanner.nextInt();
+
+        System.out.println("Entre com a matricula: ");
+        String matricula = scanner.next();
+
+        Curso curso = cursoService.getCursoById(id);
+        Aluno aluno = alunoService.getAlunoByMatricula(matricula);
+
+        alunoService.addCurso(aluno, curso);
+
+        System.out.println("");
+        System.out.println("Aluno " + aluno.getNome() + " incluido no curso de " + curso.getNome());
+        System.out.println("");
+    }
+
+    public void showCursosOptions(){
+        System.out.println("");
+        System.out.println("Opções de curso: ");
+        System.out.println("");
+        cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
     }
 }
