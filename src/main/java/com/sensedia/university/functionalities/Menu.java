@@ -1,6 +1,7 @@
 package com.sensedia.university.functionalities;
 
 import com.sensedia.university.exceptions.InvalidInput;
+import com.sensedia.university.exceptions.InvalidOption;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
@@ -32,7 +33,7 @@ public class Menu {
         System.out.println("");
     }
 
-    public void showMainOptions(){
+    public Integer showMenuOptions(){
         System.out.println("Escolhas as opções abaixo: ");
         System.out.println("");
         System.out.println("1 - Aluno");
@@ -41,6 +42,8 @@ public class Menu {
         System.out.println("4 - Disciplina");
         System.out.println("5 - Sair da aplicação");
         System.out.println("");
+
+        return inputInteger(5);
     }
 
     public void showAlunoOptions(){
@@ -49,7 +52,22 @@ public class Menu {
         System.out.println("");
         System.out.println("1 - Matricular um aluno");
         System.out.println("2 - Incluir um aluno em um curso");
+        System.out.println("3 - Voltar ao menu");
         System.out.println("");
+
+        Integer option = inputInteger(3);
+
+        switch (option) {
+            case 1:
+                createAluno();
+                break;
+            case 2:
+                createAlunoCurso();
+                break;
+            case 3:
+                showMenuOptions();
+                break;
+        }
     }
 
     public void showDocenteOptions(){
@@ -57,7 +75,19 @@ public class Menu {
         System.out.println("Docente");
         System.out.println("");
         System.out.println("1 - Matricular um docente");
+        System.out.println("2 - Voltar ao menu");
         System.out.println("");
+
+        Integer option = inputInteger(2);
+
+        switch (option) {
+            case 1:
+                createDocente();
+                break;
+            case 2:
+                showMenuOptions();
+                break;
+        }
     }
 
     public void showCursoOptions(){
@@ -65,7 +95,23 @@ public class Menu {
         System.out.println("Curso");
         System.out.println("");
         System.out.println("1 - Incluir curso");
+        System.out.println("2 - Visualizar todos os curso");
+        System.out.println("3 - Voltar ao menu");
         System.out.println("");
+
+        Integer option = inputInteger(3);
+
+        switch (option) {
+            case 1:
+                createCurso();
+                break;
+            case 2:
+                showAllCursos();
+            case 3:
+                showMenuOptions();
+                break;
+        }
+
     }
 
     public void showDisciplinaOptions(){
@@ -73,25 +119,55 @@ public class Menu {
         System.out.println("Disciplina");
         System.out.println("");
         System.out.println("1 - Incluir disciplina");
+        System.out.println("2 - Voltar ao menu");
         System.out.println("");
+
+        Integer option = inputInteger(2);
+
+        switch (option) {
+            case 1:
+                createDisciplina();
+                break;
+            case 2:
+                showMenuOptions();
+                break;
+        }
+
     }
 
-    public Integer inputOptions(){
+    public void showAllCursos(){
+        System.out.println("");
+        System.out.println("Cursos: ");
+        System.out.println("");
+        cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
+    }
+
+    public Integer inputInteger(Integer maxRange){
         System.out.println("");
         System.out.println("Digite a opção: ");
 
-        String option;
+        String input;
 
         while (true){
-            option = scanner.nextLine();
+
+            input = scanner.nextLine();
 
             try {
-                return CheckIntegerInput.verify(option);
-            } catch (InvalidInput ex){
+
+                Integer inputInteger = CheckIntegerInput.verify(input);
+
+                if(inputInteger > maxRange || inputInteger < 1){
+                    throw new InvalidOption();
+                }
+
+                return inputInteger;
+
+            } catch (InvalidInput | InvalidOption ex) {
                 System.out.println(ex.getMessage());
                 System.out.println("");
                 System.out.println("Digite uma opção válida:  ");
             }
+
         }
 
     }
@@ -178,26 +254,34 @@ public class Menu {
         System.out.println("");
         System.out.println("Incluino um aluno em um curso...");
         System.out.println("");
+
+        showAllCursos();
+        System.out.println("");
+
         System.out.println("Entre com o id do curso: ");
         Integer id = scanner.nextInt();
 
+        Aluno aluno;
+        String matricula;
+
         System.out.println("Entre com a matricula: ");
-        String matricula = scanner.next();
+        matricula = scanner.next();
+
+        aluno = alunoService.getAlunoByMatricula(matricula);
+
+        while (aluno.getId() == null){
+            System.out.println("Entre com uma matricula válida: ");
+            matricula = scanner.next();
+
+            aluno = alunoService.getAlunoByMatricula(matricula);
+        }
 
         Curso curso = cursoService.getCursoById(id);
-        Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
         alunoService.addCurso(aluno, curso);
 
         System.out.println("");
         System.out.println("Aluno " + aluno.getNome() + " incluido no curso de " + curso.getNome());
         System.out.println("");
-    }
-
-    public void showCursosOptions(){
-        System.out.println("");
-        System.out.println("Opções de curso: ");
-        System.out.println("");
-        cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
     }
 }
