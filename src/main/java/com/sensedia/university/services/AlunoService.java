@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface AlunoService {
     Aluno createAluno(Aluno aluno);
+    List<Aluno> getAllAluno();
     Aluno getAlunoByMatricula(String matricula);
     void addCurso(Aluno aluno, Curso curso);
 }

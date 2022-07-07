@@ -53,9 +53,10 @@ public class Menu {
         System.out.println("1 - Matricular um aluno");
         System.out.println("2 - Incluir um aluno em um curso");
         System.out.println("3 - Voltar ao menu");
+        System.out.println("4 - Visualizar todos os alunos");
         System.out.println("");
 
-        Integer option = inputInteger(3);
+        Integer option = inputInteger(4);
 
         switch (option) {
             case 1:
@@ -66,6 +67,9 @@ public class Menu {
                 break;
             case 3:
                 showMenuOptions();
+                break;
+            case 4:
+                showAllAlunos();
                 break;
         }
     }
@@ -140,6 +144,13 @@ public class Menu {
         System.out.println("Cursos: ");
         System.out.println("");
         cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
+    }
+
+    public void showAllAlunos(){
+        System.out.println("");
+        System.out.println("Alunos: ");
+        System.out.println("");
+        alunoService.getAllAluno().forEach(aluno -> System.out.println(aluno));
     }
 
     public Integer inputInteger(Integer maxRange){

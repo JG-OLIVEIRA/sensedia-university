@@ -7,6 +7,7 @@ import com.sensedia.university.services.AlunoService;
 import com.sensedia.university.utils.Generation;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class AlunoServiceImpl implements AlunoService {
     AlunoRepositoryImpl alunoRepository = new AlunoRepositoryImpl();
@@ -23,6 +24,11 @@ public class AlunoServiceImpl implements AlunoService {
         aluno.setMatricula(matricula);
 
         return alunoRepository.createAluno(aluno);
+    }
+
+    @Override
+    public List<Aluno> getAllAluno() {
+        return alunoRepository.getAllAluno();
     }
 
     @Override
