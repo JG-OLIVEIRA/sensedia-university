@@ -7,20 +7,6 @@
     <list default="true" id="3fe2ce49-f223-441d-b962-96b633d56578" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/AlunoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/AlunoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/factory/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/factory/ConnectionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/AlunoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/AlunoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/CursoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/CursoRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/CursoRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/AlunoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/AlunoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/CursoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/AlunoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/AlunoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/CursoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/CursoServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -66,7 +66,6 @@ public class Menu {
                 createAlunoCurso();
                 break;
             case 3:
-                showMenuOptions();
                 break;
             case 4:
                 showAllAlunos();
@@ -89,7 +88,6 @@ public class Menu {
                 createDocente();
                 break;
             case 2:
-                showMenuOptions();
                 break;
         }
     }
@@ -133,7 +131,6 @@ public class Menu {
                 createDisciplina();
                 break;
             case 2:
-                showMenuOptions();
                 break;
         }
 
