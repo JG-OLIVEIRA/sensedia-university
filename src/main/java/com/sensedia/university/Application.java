@@ -22,12 +22,16 @@ public class Application {
             switch (op){
                 case 1:
                     menu.showAlunoOptions();
+                    break;
                 case 2:
                     menu.showDocenteOptions();
+                    break;
                 case 3:
                     menu.showCursoOptions();
+                    break;
                 case 4:
                     menu.showDisciplinaOptions();
+                    break;
             }
         }
 
