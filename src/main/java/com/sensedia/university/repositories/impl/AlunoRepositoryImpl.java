@@ -6,6 +6,8 @@ import com.sensedia.university.models.Curso;
 import com.sensedia.university.repositories.AlunoRepository;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlunoRepositoryImpl implements AlunoRepository {
 
@@ -35,6 +37,42 @@ public class AlunoRepositoryImpl implements AlunoRepository {
         }
 
         return aluno;
+    }
+
+    @Override
+    public List<Aluno> getAllAluno() {
+        List<Aluno> alunos = new ArrayList<>();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            Statement statement = connection.createStatement();
+
+            statement.execute("SELECT * FROM aluno");
+
+            ResultSet result = statement.getResultSet();
+
+            while(result.next()){
+                Aluno aluno = new Aluno();
+
+                Integer id = result.getInt("ID");
+                String nome = result.getString("NOME");
+                String sobrenome = result.getString("SOBRENOME");
+                String matricula = result.getString("MATRICULA");
+                Integer ano = result.getInt("ANO");
+
+                aluno.setId(id);
+                aluno.setNome(nome);
+                aluno.setSobrenome(sobrenome);
+                aluno.setMatricula(matricula);
+                aluno.setAno(ano);
+                alunos.add(aluno);
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return alunos;
     }
 
     @Override
