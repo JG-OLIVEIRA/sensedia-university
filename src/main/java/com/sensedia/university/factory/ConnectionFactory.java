@@ -6,8 +6,15 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
+    final static private String host = "jdbc:mysql://localhost/university?useTimezone=true&serverTimezone=UTC&characterEncoding=latin1";
+
+    final static private String user = "root";
+
+    final static private String password = "root";
+
+
     public static Connection createConnection() throws SQLException {
         return DriverManager
-                .getConnection("jdbc:mysql://localhost/university?useTimezone=true&serverTimezone=UTC&characterEncoding=UTF-8", "root", "root");
+                .getConnection(host, user, password);
     }
 }

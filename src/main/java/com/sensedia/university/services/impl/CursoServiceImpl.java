@@ -4,6 +4,8 @@ import com.sensedia.university.models.Curso;
 import com.sensedia.university.repositories.impl.CursoRepositoryImpl;
 import com.sensedia.university.services.CursoService;
 
+import java.util.List;
+
 public class CursoServiceImpl implements CursoService {
 
     CursoRepositoryImpl cursoRepository = new CursoRepositoryImpl();
@@ -12,4 +14,15 @@ public class CursoServiceImpl implements CursoService {
     public Curso createCurso(Curso curso) {
         return cursoRepository.createCurso(curso);
     }
+
+    @Override
+    public Curso getCursoById(Integer id) {
+        return cursoRepository.getCursoById(id);
+    }
+
+    @Override
+    public List<Curso> getAllCurso() {
+        return cursoRepository.getAllCurso();
+    }
+
 }
