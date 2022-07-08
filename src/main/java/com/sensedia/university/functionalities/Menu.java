@@ -122,15 +122,19 @@ public class Menu {
         System.out.println("");
         System.out.println("1 - Incluir disciplina");
         System.out.println("2 - Voltar ao menu");
+        System.out.println("3 - Visualizar disciplinas");
         System.out.println("");
 
-        Integer option = inputInteger(2);
+        Integer option = inputInteger(3);
 
         switch (option) {
             case 1:
                 createDisciplina();
                 break;
             case 2:
+                break;
+            case 3:
+                showAllDisciplinas();
                 break;
         }
 
@@ -148,6 +152,13 @@ public class Menu {
         System.out.println("Alunos: ");
         System.out.println("");
         alunoService.getAllAluno().forEach(aluno -> System.out.println(aluno));
+    }
+
+    public void showAllDisciplinas(){
+        System.out.println("");
+        System.out.println("Disciplinas: ");
+        System.out.println("");
+        disciplinaService.getAllDisciplina().forEach(disciplina -> System.out.println(disciplina));
     }
 
     public Integer inputInteger(Integer maxRange){
