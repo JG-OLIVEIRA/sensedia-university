@@ -4,6 +4,8 @@ import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.repositories.impl.DisciplinaRepositoryImpl;
 import com.sensedia.university.services.DisciplinaService;
 
+import java.util.List;
+
 public class DisciplinaServiceImpl implements DisciplinaService {
 
     DisciplinaRepositoryImpl disciplinaRepository = new DisciplinaRepositoryImpl();
@@ -11,5 +13,10 @@ public class DisciplinaServiceImpl implements DisciplinaService {
     @Override
     public Disciplina createDisciplina(Disciplina disciplina) {
         return disciplinaRepository.createDisciplina(disciplina);
+    }
+
+    @Override
+    public List<Disciplina> getAllDisciplina() {
+        return disciplinaRepository.getAllDisciplina();
     }
 }
