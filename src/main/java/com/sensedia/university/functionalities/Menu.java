@@ -79,15 +79,19 @@ public class Menu {
         System.out.println("");
         System.out.println("1 - Matricular um docente");
         System.out.println("2 - Voltar ao menu");
+        System.out.println("3 - Mostrar todos os docentes");
         System.out.println("");
 
-        Integer option = inputInteger(2);
+        Integer option = inputInteger(3);
 
         switch (option) {
             case 1:
                 createDocente();
                 break;
             case 2:
+                break;
+            case 3:
+                showAllDocentes();
                 break;
         }
     }
@@ -138,6 +142,13 @@ public class Menu {
                 break;
         }
 
+    }
+
+    public void showAllDocentes(){
+        System.out.println("");
+        System.out.println("Docentes: ");
+        System.out.println("");
+        docenteService.getAllDocente().forEach(docente -> System.out.println(docente));
     }
 
     public void showAllCursos(){
