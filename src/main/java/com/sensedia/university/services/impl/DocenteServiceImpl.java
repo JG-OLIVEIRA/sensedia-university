@@ -7,6 +7,7 @@ import com.sensedia.university.services.DocenteService;
 import com.sensedia.university.utils.Generation;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class DocenteServiceImpl implements DocenteService {
     DocenteRepository docenteRepository = new DocenteRepositoryImpl();
@@ -23,5 +24,10 @@ public class DocenteServiceImpl implements DocenteService {
         docente.setMatricula(matricula);
 
         return docenteRepository.createDocente(docente);
+    }
+
+    @Override
+    public List<Docente> getAllDocente() {
+        return docenteRepository.getAllDocente();
     }
 }
