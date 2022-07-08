@@ -74,7 +74,7 @@ public class AlunoRepositoryImpl implements AlunoRepository {
 
         return alunos;
     }
-
+    
     @Override
     public Aluno getAlunoByMatricula(String matricula){
 
@@ -109,6 +109,34 @@ public class AlunoRepositoryImpl implements AlunoRepository {
         }
 
         return aluno;
+    }
+
+    @Override
+    public Integer getCountOfCursoByAluno(Aluno aluno){
+
+        Integer count = 0;
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT * FROM aluno_curso where aluno_id = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            myStat.setInt(1, aluno.getId());
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            while (result.next()){
+                count = result.getRow();
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return count;
     }
 
     public void addCurso(Aluno aluno, Curso curso){

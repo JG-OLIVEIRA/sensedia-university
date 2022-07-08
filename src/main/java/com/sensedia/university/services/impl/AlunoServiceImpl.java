@@ -38,6 +38,19 @@ public class AlunoServiceImpl implements AlunoService {
 
     @Override
     public void addCurso(Aluno aluno, Curso curso) {
-        alunoRepository.addCurso(aluno, curso);
+        Integer count = alunoRepository.getCountOfCursoByAluno(aluno);
+
+        if(count > 2){
+            System.out.println("");
+            System.out.println("O aluno atingiu a contagem máxima de cursos (2)");
+            System.out.println("");
+        } else {
+            alunoRepository.addCurso(aluno, curso);
+
+            System.out.println("");
+            System.out.println("Aluno " + aluno.getNome() + " incluido no curso de " + curso.getNome());
+            System.out.println("");
+        }
+
     }
 }
