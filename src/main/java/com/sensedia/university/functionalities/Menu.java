@@ -113,6 +113,7 @@ public class Menu {
                 break;
             case 2:
                 showAllCursos();
+                break;
             case 3:
                 showMenuOptions();
                 break;
@@ -149,6 +150,7 @@ public class Menu {
         System.out.println("Docentes: ");
         System.out.println("");
         docenteService.getAllDocente().forEach(docente -> System.out.println(docente));
+        System.out.println("");
     }
 
     public void showAllCursos(){
@@ -156,6 +158,7 @@ public class Menu {
         System.out.println("Cursos: ");
         System.out.println("");
         cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
+        System.out.println("");
     }
 
     public void showAllAlunos(){
@@ -163,6 +166,7 @@ public class Menu {
         System.out.println("Alunos: ");
         System.out.println("");
         alunoService.getAllAluno().forEach(aluno -> System.out.println(aluno));
+        System.out.println("");
     }
 
     public void showAllDisciplinas(){
@@ -170,6 +174,7 @@ public class Menu {
         System.out.println("Disciplinas: ");
         System.out.println("");
         disciplinaService.getAllDisciplina().forEach(disciplina -> System.out.println(disciplina));
+        System.out.println("");
     }
 
     public Integer inputInteger(Integer maxRange){
@@ -213,6 +218,8 @@ public class Menu {
         System.out.println("Sobrenome:");
         String sobrenome = scanner.nextLine();
 
+        scanner.nextLine();
+
         aluno.setNome(nome);
         aluno.setSobrenome(sobrenome);
 
@@ -231,6 +238,8 @@ public class Menu {
         String nome = scanner.nextLine();
         System.out.println("Sobrenome:");
         String sobrenome = scanner.nextLine();
+
+        scanner.nextLine();
 
         docente.setNome(nome);
         docente.setSobrenome(sobrenome);
@@ -253,6 +262,8 @@ public class Menu {
 
         curso = cursoService.createCurso(curso);
 
+        scanner.nextLine();
+
         System.out.println(curso);
     }
 
@@ -270,6 +281,8 @@ public class Menu {
 
         System.out.println("Sala:");
         Integer sala = scanner.nextInt();
+
+        scanner.nextLine();
 
         disciplina.setNome(nome);
         disciplina.setTurno(turno);
@@ -306,12 +319,10 @@ public class Menu {
             aluno = alunoService.getAlunoByMatricula(matricula);
         }
 
+        scanner.nextLine();
+
         Curso curso = cursoService.getCursoById(id);
 
         alunoService.addCurso(aluno, curso);
-
-        System.out.println("");
-        System.out.println("Aluno " + aluno.getNome() + " incluido no curso de " + curso.getNome());
-        System.out.println("");
     }
 }
