@@ -37,6 +37,11 @@ public class AlunoServiceImpl implements AlunoService {
     }
 
     @Override
+    public List<Curso> getCursosByMatricula(String matricula) {
+        return alunoRepository.getCursosByMatricula(matricula);
+    }
+
+    @Override
     public void addCurso(Aluno aluno, Curso curso) {
         Integer count = alunoRepository.getCountOfCursoByAluno(aluno);
 

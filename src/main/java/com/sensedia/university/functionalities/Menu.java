@@ -54,9 +54,10 @@ public class Menu {
         System.out.println("2 - Incluir um aluno em um curso");
         System.out.println("3 - Voltar ao menu");
         System.out.println("4 - Visualizar todos os alunos");
+        System.out.println("5 - Visualizar todos os curso pela matricula do aluno");
         System.out.println("");
 
-        Integer option = inputInteger(4);
+        Integer option = inputInteger(5);
 
         switch (option) {
             case 1:
@@ -69,6 +70,10 @@ public class Menu {
                 break;
             case 4:
                 showAllAlunos();
+                break;
+            case 5:
+                String matricula = inputMatricula();
+                showCursosByMatricula(matricula);
                 break;
         }
     }
@@ -161,6 +166,14 @@ public class Menu {
         System.out.println("");
     }
 
+    public void showCursosByMatricula(String matricula){
+        System.out.println("");
+        System.out.println("Cursos: ");
+        System.out.println("");
+        alunoService.getCursosByMatricula(matricula).forEach(curso -> System.out.println(curso));
+        System.out.println("");
+    }
+
     public void showAllAlunos(){
         System.out.println("");
         System.out.println("Alunos: ");
@@ -205,6 +218,27 @@ public class Menu {
 
         }
 
+    }
+
+    public String inputMatricula(){
+        Aluno aluno;
+        String matricula;
+
+        System.out.println("Entre com a matricula: ");
+        matricula = scanner.next();
+
+        aluno = alunoService.getAlunoByMatricula(matricula);
+
+        while (aluno.getId() == null){
+            System.out.println("Entre com uma matricula válida: ");
+            matricula = scanner.next();
+
+            aluno = alunoService.getAlunoByMatricula(matricula);
+        }
+
+        scanner.nextLine();
+
+        return matricula;
     }
 
     public void createAluno(){
@@ -304,20 +338,8 @@ public class Menu {
         System.out.println("Entre com o id do curso: ");
         Integer id = scanner.nextInt();
 
-        Aluno aluno;
-        String matricula;
-
-        System.out.println("Entre com a matricula: ");
-        matricula = scanner.next();
-
-        aluno = alunoService.getAlunoByMatricula(matricula);
-
-        while (aluno.getId() == null){
-            System.out.println("Entre com uma matricula válida: ");
-            matricula = scanner.next();
-
-            aluno = alunoService.getAlunoByMatricula(matricula);
-        }
+        String matricula = inputMatricula();
+        Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
         scanner.nextLine();
 
