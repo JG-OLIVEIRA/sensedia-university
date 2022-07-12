@@ -236,8 +236,6 @@ public class Menu {
             aluno = alunoService.getAlunoByMatricula(matricula);
         }
 
-        scanner.nextLine();
-
         return matricula;
     }
 
@@ -340,8 +338,6 @@ public class Menu {
 
         String matricula = inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
-
-        scanner.nextLine();
 
         Curso curso = cursoService.getCursoById(id);
 
