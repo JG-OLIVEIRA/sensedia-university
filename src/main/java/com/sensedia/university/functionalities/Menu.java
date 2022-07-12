@@ -55,9 +55,10 @@ public class Menu {
         System.out.println("3 - Voltar ao menu");
         System.out.println("4 - Visualizar todos os alunos");
         System.out.println("5 - Visualizar todos os curso pela matricula do aluno");
+        System.out.println("6 - Incluir um aluno em uma disciplina");
         System.out.println("");
 
-        Integer option = inputInteger(5);
+        Integer option = inputInteger(6);
 
         switch (option) {
             case 1:
@@ -74,6 +75,9 @@ public class Menu {
             case 5:
                 String matricula = inputMatricula();
                 showCursosByMatricula(matricula);
+                break;
+            case 6:
+                createAlunoDisciplina();
                 break;
         }
     }
@@ -343,4 +347,24 @@ public class Menu {
 
         alunoService.addCurso(aluno, curso);
     }
+
+    public void createAlunoDisciplina(){
+        System.out.println("");
+        System.out.println("Incluino um aluno em um curso...");
+        System.out.println("");
+
+        showAllDisciplinas();
+        System.out.println("");
+
+        System.out.println("Entre com o id da disciplina: ");
+        Integer id = scanner.nextInt();
+
+        String matricula = inputMatricula();
+        Aluno aluno = alunoService.getAlunoByMatricula(matricula);
+
+        Disciplina disciplina = disciplinaService.getDisciplinaById(id);
+
+        alunoService.addDisciplina(aluno, disciplina);
+    }
+
 }

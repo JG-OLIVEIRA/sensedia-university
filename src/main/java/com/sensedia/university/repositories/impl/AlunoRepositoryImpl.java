@@ -3,6 +3,7 @@ package com.sensedia.university.repositories.impl;
 import com.sensedia.university.factory.ConnectionFactory;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
+import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.repositories.AlunoRepository;
 
 import java.sql.*;
@@ -189,5 +190,23 @@ public class AlunoRepositoryImpl implements AlunoRepository {
             ex.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void addDisciplina(Aluno aluno, Disciplina disciplina) {
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "INSERT INTO aluno_disciplina (ALUNO_ID, CURSO_ID) values (?, ?)";
+
+            PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            myStat.setInt(1, aluno.getId());
+            myStat.setInt(2, disciplina.getId());
+
+            myStat.execute();
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
     }
 }

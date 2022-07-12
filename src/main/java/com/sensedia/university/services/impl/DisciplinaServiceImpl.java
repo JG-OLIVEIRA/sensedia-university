@@ -19,4 +19,9 @@ public class DisciplinaServiceImpl implements DisciplinaService {
     public List<Disciplina> getAllDisciplina() {
         return disciplinaRepository.getAllDisciplina();
     }
+
+    @Override
+    public Disciplina getDisciplinaById(Integer id) {
+        return disciplinaRepository.getDisciplinaById(id);
+    }
 }

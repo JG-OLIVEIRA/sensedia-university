@@ -1,6 +1,7 @@
 package com.sensedia.university.repositories.impl;
 
 import com.sensedia.university.factory.ConnectionFactory;
+import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.repositories.DisciplinaRepository;
 
@@ -72,5 +73,39 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
         }
 
         return disciplinas;
+    }
+
+    @Override
+    public Disciplina getDisciplinaById(Integer id) {
+        Disciplina disciplina = new Disciplina();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT * FROM disciplina WHERE id = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setInt(1, id);
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            if(result.next()){
+                String nome = result.getString("NOME");
+                String turno = result.getString("TURNO");
+                Integer sala = result.getInt("SALA");
+                disciplina.setNome(nome);
+                disciplina.setTurno(turno);
+                disciplina.setSala(sala);
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        disciplina.setId(id);
+
+        return disciplina;
     }
 }
