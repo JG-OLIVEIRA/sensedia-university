@@ -2,6 +2,7 @@ package com.sensedia.university.services.impl;
 
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
+import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.repositories.impl.AlunoRepositoryImpl;
 import com.sensedia.university.services.AlunoService;
 import com.sensedia.university.utils.Generation;
@@ -57,5 +58,10 @@ public class AlunoServiceImpl implements AlunoService {
             System.out.println("");
         }
 
+    }
+
+    @Override
+    public void addDisciplina(Aluno aluno, Disciplina disciplina) {
+        alunoRepository.addDisciplina(aluno, disciplina);
     }
 }

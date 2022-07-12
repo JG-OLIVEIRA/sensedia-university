@@ -6,9 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="3fe2ce49-f223-441d-b962-96b633d56578" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/AlunoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/DisciplinaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/DisciplinaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/DisciplinaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/DisciplinaRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/AlunoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/DisciplinaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/DisciplinaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/DisciplinaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/DisciplinaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/AlunoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/AlunoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/DisciplinaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/DisciplinaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/DisciplinaRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/DisciplinaRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/AlunoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/AlunoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/DisciplinaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/DisciplinaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/AlunoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/AlunoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/DisciplinaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/DisciplinaServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +130,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java</url>
-          <line>227</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
