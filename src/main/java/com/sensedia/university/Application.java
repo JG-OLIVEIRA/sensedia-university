@@ -3,9 +3,6 @@ package com.sensedia.university;
 import com.sensedia.university.exceptions.InvalidInput;
 import com.sensedia.university.functionalities.Menu;
 
-import java.io.IOException;
-
-
 public class Application {
 
     public static void main(String[] args) throws InvalidInput {

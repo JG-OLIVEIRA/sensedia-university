@@ -139,6 +139,40 @@ public class AlunoRepositoryImpl implements AlunoRepository {
         return count;
     }
 
+    public List<Curso> getCursosByMatricula(String matricula){
+        List<Curso> cursos = new ArrayList<>();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT curso.ID, curso.NOME, aluno.MATRICULA, aluno_curso.ALUNO_ID FROM curso, aluno, aluno_curso WHERE aluno.MATRICULA = ? AND aluno_curso.ALUNO_ID = aluno.ID";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setString(1, matricula);
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            while(result.next()){
+                Curso curso = new Curso();
+
+                Integer id = result.getInt("ID");
+                String nome = result.getString("NOME");
+
+                curso.setId(id);
+                curso.setNome(nome);
+
+                cursos.add(curso);
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return cursos;
+    }
+
     public void addCurso(Aluno aluno, Curso curso){
         try(Connection connection = ConnectionFactory.createConnection()){
 
