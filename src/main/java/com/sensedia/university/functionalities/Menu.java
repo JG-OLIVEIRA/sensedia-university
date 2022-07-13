@@ -1,7 +1,5 @@
 package com.sensedia.university.functionalities;
 
-import com.sensedia.university.exceptions.InvalidInput;
-import com.sensedia.university.exceptions.InvalidOption;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
@@ -14,18 +12,15 @@ import com.sensedia.university.services.impl.AlunoServiceImpl;
 import com.sensedia.university.services.impl.CursoServiceImpl;
 import com.sensedia.university.services.impl.DisciplinaServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
-import com.sensedia.university.utils.CheckIntegerInput;
-
-import java.util.Scanner;
 
 public class Menu {
-
-    Scanner scanner = new Scanner(System.in);
 
     AlunoService alunoService = new AlunoServiceImpl();
     DocenteService docenteService = new DocenteServiceImpl();
     CursoService cursoService = new CursoServiceImpl();
     DisciplinaService disciplinaService = new DisciplinaServiceImpl();
+
+    Input input = new Input();
 
     public void showWelcomeMessage(){
         System.out.println("");
@@ -43,7 +38,7 @@ public class Menu {
         System.out.println("5 - Sair da aplicação");
         System.out.println("");
 
-        return inputInteger(5);
+        return input.inputIntegerWithRange(5);
     }
 
     public void showAlunoOptions(){
@@ -58,7 +53,7 @@ public class Menu {
         System.out.println("6 - Incluir um aluno em uma disciplina");
         System.out.println("");
 
-        Integer option = inputInteger(6);
+        Integer option = input.inputIntegerWithRange(6);
 
         switch (option) {
             case 1:
@@ -73,7 +68,7 @@ public class Menu {
                 showAllAlunos();
                 break;
             case 5:
-                String matricula = inputMatricula();
+                String matricula = input.inputMatricula();
                 showCursosByMatricula(matricula);
                 break;
             case 6:
@@ -91,7 +86,7 @@ public class Menu {
         System.out.println("3 - Mostrar todos os docentes");
         System.out.println("");
 
-        Integer option = inputInteger(3);
+        Integer option = input.inputIntegerWithRange(3);
 
         switch (option) {
             case 1:
@@ -114,7 +109,7 @@ public class Menu {
         System.out.println("3 - Voltar ao menu");
         System.out.println("");
 
-        Integer option = inputInteger(3);
+        Integer option = input.inputIntegerWithRange(3);
 
         switch (option) {
             case 1:
@@ -139,7 +134,7 @@ public class Menu {
         System.out.println("3 - Visualizar disciplinas");
         System.out.println("");
 
-        Integer option = inputInteger(3);
+        Integer option = input.inputIntegerWithRange(3);
 
         switch (option) {
             case 1:
@@ -194,55 +189,6 @@ public class Menu {
         System.out.println("");
     }
 
-    public Integer inputInteger(Integer maxRange){
-        System.out.println("");
-        System.out.println("Digite a opção: ");
-
-        String input;
-
-        while (true){
-
-            input = scanner.nextLine();
-
-            try {
-
-                Integer inputInteger = CheckIntegerInput.verify(input);
-
-                if(inputInteger > maxRange || inputInteger < 1){
-                    throw new InvalidOption();
-                }
-
-                return inputInteger;
-
-            } catch (InvalidInput | InvalidOption ex) {
-                System.out.println(ex.getMessage());
-                System.out.println("");
-                System.out.println("Digite uma opção válida:  ");
-            }
-
-        }
-
-    }
-
-    public String inputMatricula(){
-        Aluno aluno;
-        String matricula;
-
-        System.out.println("Entre com a matricula: ");
-        matricula = scanner.next();
-
-        aluno = alunoService.getAlunoByMatricula(matricula);
-
-        while (aluno.getId() == null){
-            System.out.println("Entre com uma matricula válida: ");
-            matricula = scanner.next();
-
-            aluno = alunoService.getAlunoByMatricula(matricula);
-        }
-
-        return matricula;
-    }
-
     public void createAluno(){
         Aluno aluno = new Aluno();
 
@@ -250,11 +196,9 @@ public class Menu {
         System.out.println("Matriculando um aluno...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = scanner.nextLine();
+        String nome = input.inputString();
         System.out.println("Sobrenome:");
-        String sobrenome = scanner.nextLine();
-
-        scanner.nextLine();
+        String sobrenome = input.inputString();
 
         aluno.setNome(nome);
         aluno.setSobrenome(sobrenome);
@@ -271,11 +215,9 @@ public class Menu {
         System.out.println("Matriculando um docente...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = scanner.nextLine();
+        String nome = input.inputString();
         System.out.println("Sobrenome:");
-        String sobrenome = scanner.nextLine();
-
-        scanner.nextLine();
+        String sobrenome = input.inputString();
 
         docente.setNome(nome);
         docente.setSobrenome(sobrenome);
@@ -292,13 +234,11 @@ public class Menu {
         System.out.println("Incluindo um curso...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = scanner.nextLine();
+        String nome = input.inputString();
 
         curso.setNome(nome);
 
         curso = cursoService.createCurso(curso);
-
-        scanner.nextLine();
 
         System.out.println(curso);
     }
@@ -310,15 +250,13 @@ public class Menu {
         System.out.println("Incluino uma disciplina...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = scanner.nextLine();
+        String nome = input.inputString();
 
         System.out.println("Turno:");
-        String turno = scanner.next();
+        String turno = input.inputString();
 
         System.out.println("Sala:");
-        Integer sala = scanner.nextInt();
-
-        scanner.nextLine();
+        Integer sala = input.inputInteger();
 
         disciplina.setNome(nome);
         disciplina.setTurno(turno);
@@ -338,9 +276,9 @@ public class Menu {
         System.out.println("");
 
         System.out.println("Entre com o id do curso: ");
-        Integer id = scanner.nextInt();
+        Integer id = input.inputInteger();
 
-        String matricula = inputMatricula();
+        String matricula = input.inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
         Curso curso = cursoService.getCursoById(id);
@@ -357,9 +295,9 @@ public class Menu {
         System.out.println("");
 
         System.out.println("Entre com o id da disciplina: ");
-        Integer id = scanner.nextInt();
+        Integer id = input.inputInteger();
 
-        String matricula = inputMatricula();
+        String matricula = input.inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
         Disciplina disciplina = disciplinaService.getDisciplinaById(id);
