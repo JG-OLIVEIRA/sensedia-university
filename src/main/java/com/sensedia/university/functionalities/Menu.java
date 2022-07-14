@@ -1,5 +1,6 @@
 package com.sensedia.university.functionalities;
 
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
@@ -12,6 +13,8 @@ import com.sensedia.university.services.impl.AlunoServiceImpl;
 import com.sensedia.university.services.impl.CursoServiceImpl;
 import com.sensedia.university.services.impl.DisciplinaServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
+
+import java.sql.SQLException;
 
 public class Menu {
 
@@ -255,7 +258,7 @@ public class Menu {
 
         curso.setNome(nome);
 
-        curso = cursoService.createCurso(curso);
+        cursoService.createCurso(curso);
 
         System.out.println(curso);
     }
