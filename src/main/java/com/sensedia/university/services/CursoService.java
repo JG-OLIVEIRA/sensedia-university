@@ -2,6 +2,7 @@ package com.sensedia.university.services;
 
 import com.sensedia.university.models.Curso;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface CursoService {
