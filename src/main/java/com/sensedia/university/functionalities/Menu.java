@@ -236,6 +236,23 @@ public class Menu {
         System.out.println("Nome:");
         String nome = input.inputString();
 
+        while(true){
+            if(nome.length() > 50){
+                System.out.println("Limite de 50 caracteres excedido. Digite um nome com até 50 caracteres! ");
+                System.out.println("Nome:");
+                nome = input.inputString();
+            }
+
+            if(cursoService.getCursoByNome(nome).getId() != null){
+                System.out.println("O curso já existe. Digite um novo! ");
+                System.out.println("Nome:");
+                nome = input.inputString();
+            } else {
+                break;
+            }
+
+        }
+
         curso.setNome(nome);
 
         curso = cursoService.createCurso(curso);

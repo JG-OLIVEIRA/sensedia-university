@@ -36,6 +36,36 @@ public class CursoRepositoryImpl implements CursoRepository {
     }
 
     @Override
+    public Curso getCursoByName(String nome) {
+        Curso curso = new Curso();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT * FROM curso WHERE nome = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setString(1, nome);
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            if(result.next()){
+                Integer id = result.getInt("ID");
+                curso.setId(id);
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        curso.setNome(nome);
+
+        return curso;
+    }
+
+    @Override
     public Curso getCursoById(Integer id) {
         Curso curso = new Curso();
 

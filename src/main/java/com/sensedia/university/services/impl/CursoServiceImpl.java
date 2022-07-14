@@ -16,6 +16,11 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
+    public Curso getCursoByNome(String nome) {
+        return cursoRepository.getCursoByName(nome);
+    }
+
+    @Override
     public Curso getCursoById(Integer id) {
         return cursoRepository.getCursoById(id);
     }
