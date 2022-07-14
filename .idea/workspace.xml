@@ -11,10 +11,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/CursoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/CursoRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/CursoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/CursoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/CursoServiceImpl.java" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/exceptions/InvalidInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/exceptions/InvalidInput.class" afterDir="false" />
-=======
->>>>>>> 7248734a80337a8e49be34fd8a44158fb23b3667
       <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/models/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/models/Aluno.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/models/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/models/Curso.class" afterDir="false" />
