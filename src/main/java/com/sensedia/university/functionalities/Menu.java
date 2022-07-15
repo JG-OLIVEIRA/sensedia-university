@@ -1,6 +1,5 @@
 package com.sensedia.university.functionalities;
 
-import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
@@ -14,7 +13,6 @@ import com.sensedia.university.services.impl.CursoServiceImpl;
 import com.sensedia.university.services.impl.DisciplinaServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class Menu {
@@ -157,7 +155,15 @@ public class Menu {
         System.out.println("");
         System.out.println("Docentes: ");
         System.out.println("");
-        docenteService.getAllDocente().forEach(docente -> System.out.println(docente));
+
+        List<Docente> docentes = docenteService.getAllDocente();
+
+        if(docentes.isEmpty()){
+            System.out.println("Nenhum docente cadastrado!");
+        } else {
+            docentes.forEach(docente -> System.out.println(docente));
+        }
+
         System.out.println("");
     }
 
@@ -181,7 +187,15 @@ public class Menu {
         System.out.println("");
         System.out.println("Cursos: ");
         System.out.println("");
-        alunoService.getCursosByMatricula(matricula).forEach(curso -> System.out.println(curso));
+
+        List<Curso> cursos = alunoService.getCursosByMatricula(matricula);
+
+        if(cursos.isEmpty()){
+            System.out.println("Nenhum curso cadastrado!");
+        } else {
+            cursos.forEach(curso -> System.out.println(curso));
+        }
+
         System.out.println("");
     }
 
@@ -189,7 +203,15 @@ public class Menu {
         System.out.println("");
         System.out.println("Alunos: ");
         System.out.println("");
-        alunoService.getAllAluno().forEach(aluno -> System.out.println(aluno));
+
+        List<Aluno> alunos = alunoService.getAllAluno();
+
+        if(alunos.isEmpty()){
+            System.out.println("Nenhum aluno cadastrado!");
+        } else {
+            alunos.forEach(aluno -> System.out.println(aluno));
+        }
+
         System.out.println("");
     }
 
@@ -197,7 +219,15 @@ public class Menu {
         System.out.println("");
         System.out.println("Disciplinas: ");
         System.out.println("");
-        disciplinaService.getAllDisciplina().forEach(disciplina -> System.out.println(disciplina));
+
+        List<Disciplina> disciplinas = disciplinaService.getAllDisciplina();
+
+        if(disciplinas.isEmpty()){
+            System.out.println("Nenhuma disciplina cadastrada!");
+        } else {
+            disciplinas.forEach(disciplina -> System.out.println(disciplina));
+        }
+
         System.out.println("");
     }
 
