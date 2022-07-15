@@ -15,6 +15,7 @@ import com.sensedia.university.services.impl.DisciplinaServiceImpl;
 import com.sensedia.university.services.impl.DocenteServiceImpl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Menu {
 
@@ -164,7 +165,15 @@ public class Menu {
         System.out.println("");
         System.out.println("Cursos: ");
         System.out.println("");
-        cursoService.getAllCurso().forEach(curso -> System.out.println(curso));
+
+        List<Curso> cursos = cursoService.getAllCurso();
+
+        if(cursos.isEmpty()){
+            System.out.println("Nenhum curso cadastrado!");
+        } else {
+            cursos.forEach(curso -> System.out.println(curso));
+        }
+
         System.out.println("");
     }
 
