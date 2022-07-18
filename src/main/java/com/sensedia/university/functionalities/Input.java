@@ -16,12 +16,21 @@ public class Input {
 
     AlunoService alunoService = new AlunoServiceImpl();
 
-    public String inputString(){
+    public String inputString(Integer limit){
         String campo = scanner.nextLine();
 
-        while(campo.isBlank()){
-            System.out.println("Campo vazio, digite novamente: ");
-            campo = scanner.nextLine();
+        while(true){
+
+            if(campo.isBlank()){
+                System.out.println("Campo vazio, digite novamente: ");
+                campo = scanner.nextLine();
+            } else if (campo.length() > limit) {
+                System.out.println("Campo limite de " + limit + " digite novamente: ");
+                campo = scanner.nextLine();
+            } else {
+                break;
+            }
+
         }
 
         return campo;

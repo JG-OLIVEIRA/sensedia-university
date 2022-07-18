@@ -238,9 +238,9 @@ public class Menu {
         System.out.println("Matriculando um aluno...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = input.inputString();
+        String nome = input.inputString(25);
         System.out.println("Sobrenome:");
-        String sobrenome = input.inputString();
+        String sobrenome = input.inputString(50);
 
         aluno.setNome(nome);
         aluno.setSobrenome(sobrenome);
@@ -257,9 +257,9 @@ public class Menu {
         System.out.println("Matriculando um docente...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = input.inputString();
+        String nome = input.inputString(25);
         System.out.println("Sobrenome:");
-        String sobrenome = input.inputString();
+        String sobrenome = input.inputString(50);
 
         docente.setNome(nome);
         docente.setSobrenome(sobrenome);
@@ -276,19 +276,14 @@ public class Menu {
         System.out.println("Incluindo um curso...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = input.inputString();
+        String nome = input.inputString(50);
 
         while(true){
-            if(nome.length() > 50){
-                System.out.println("Limite de 50 caracteres excedido. Digite um nome com até 50 caracteres! ");
-                System.out.println("Nome:");
-                nome = input.inputString();
-            }
 
             if(cursoService.getCursoByNome(nome).getId() != null){
                 System.out.println("O curso já existe. Digite um novo! ");
                 System.out.println("Nome:");
-                nome = input.inputString();
+                nome = input.inputString(50);
             } else {
                 break;
             }
@@ -309,10 +304,10 @@ public class Menu {
         System.out.println("Incluino uma disciplina...");
         System.out.println("");
         System.out.println("Nome:");
-        String nome = input.inputString();
+        String nome = input.inputString(100);
 
         System.out.println("Turno:");
-        String turno = input.inputString();
+        String turno = input.inputString(2);
 
         System.out.println("Sala:");
         Integer sala = input.inputInteger();
