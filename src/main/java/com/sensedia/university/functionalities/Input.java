@@ -46,7 +46,7 @@ public class Input {
         return matricula;
     }
 
-    public Integer inputInteger(){
+    public Integer inputInteger() {
         System.out.println("");
         System.out.println("Digite a opção: ");
 

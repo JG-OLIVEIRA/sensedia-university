@@ -1,7 +1,6 @@
 package com.sensedia.university.repositories.impl;
 
 import com.sensedia.university.factory.ConnectionFactory;
-import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.repositories.DisciplinaRepository;
 

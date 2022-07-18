@@ -1,6 +1,5 @@
 package com.sensedia.university.repositories.impl;
 
-import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import com.sensedia.university.factory.ConnectionFactory;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.repositories.CursoRepository;

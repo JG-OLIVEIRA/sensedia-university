@@ -4,7 +4,6 @@ import com.sensedia.university.models.Curso;
 import com.sensedia.university.repositories.impl.CursoRepositoryImpl;
 import com.sensedia.university.services.CursoService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class CursoServiceImpl implements CursoService {
