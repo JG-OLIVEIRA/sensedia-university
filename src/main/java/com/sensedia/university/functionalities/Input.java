@@ -71,6 +71,10 @@ public class Input {
 
                 Integer inputInteger = CheckIntegerInput.verify(input);
 
+                if(inputInteger < 0){
+                    throw new InvalidInput();
+                }
+
                 return inputInteger;
 
             } catch (InvalidInput | EmptyInput ex) {
