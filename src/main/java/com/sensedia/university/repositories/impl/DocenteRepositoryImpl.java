@@ -1,11 +1,9 @@
 package com.sensedia.university.repositories.impl;
 
 import com.sensedia.university.factory.ConnectionFactory;
-import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Docente;
 import com.sensedia.university.repositories.DocenteRepository;
 
-import javax.print.Doc;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
