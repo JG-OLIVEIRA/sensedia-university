@@ -358,5 +358,4 @@ public class Menu {
 
         alunoService.addDisciplina(aluno, disciplina);
     }
-
 }
