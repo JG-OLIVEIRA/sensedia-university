@@ -113,9 +113,9 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
 
         try(Connection connection = ConnectionFactory.createConnection()){
 
-            String query = "UPDATE SET disciplina (NOME, TURNO, SALA) values (?, ?, ?) WHERE id = ?";
+            String query = "UPDATE disciplina set nome = ?, turno = ?, sala = ? WHERE id = ?";
 
-            PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement myStat = connection.prepareStatement(query);
 
             myStat.setString(1, disciplina.getNome());
             myStat.setString(2, disciplina.getTurno());
