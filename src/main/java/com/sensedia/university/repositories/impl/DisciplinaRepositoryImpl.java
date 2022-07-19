@@ -107,4 +107,27 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
 
         return disciplina;
     }
+
+    @Override
+    public Disciplina updateDisciplinaById(Disciplina disciplina) {
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "UPDATE disciplina set nome = ?, turno = ?, sala = ? WHERE id = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setString(1, disciplina.getNome());
+            myStat.setString(2, disciplina.getTurno());
+            myStat.setInt(3, disciplina.getSala());
+            myStat.setInt(4, disciplina.getId());
+
+            myStat.executeUpdate();
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return disciplina;
+    }
 }

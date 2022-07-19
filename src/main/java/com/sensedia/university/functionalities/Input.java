@@ -47,7 +47,7 @@ public class Input {
 
         while (aluno.getId() == null){
             System.out.println("Entre com uma matricula válida: ");
-            matricula = scanner.next();
+            matricula = scanner.nextLine();
 
             aluno = alunoService.getAlunoByMatricula(matricula);
         }
@@ -61,7 +61,7 @@ public class Input {
 
         while (true) {
 
-            String input = scanner.next();
+            String input = scanner.nextLine();
 
             try {
 
