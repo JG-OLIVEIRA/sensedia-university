@@ -1,5 +1,6 @@
 package com.sensedia.university.services.impl;
 
+import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.models.Docente;
 import com.sensedia.university.repositories.DocenteRepository;
 import com.sensedia.university.repositories.impl.DocenteRepositoryImpl;
@@ -29,5 +30,15 @@ public class DocenteServiceImpl implements DocenteService {
     @Override
     public List<Docente> getAllDocente() {
         return docenteRepository.getAllDocente();
+    }
+
+    @Override
+    public void addDisciplina(Docente docente, Disciplina disciplina) {
+        docenteRepository.addDisciplina(docente, disciplina);
+    }
+
+    @Override
+    public Docente getDocenteByMatricula(String matricula) {
+        return docenteRepository.getDocenteByMatricula(matricula);
     }
 }

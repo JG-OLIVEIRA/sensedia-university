@@ -1,8 +1,9 @@
-package com.sensedia.university.functionalities;
+package com.sensedia.university.functionalities.impl;
 
 import com.sensedia.university.exceptions.EmptyInput;
 import com.sensedia.university.exceptions.InvalidInput;
 import com.sensedia.university.exceptions.InvalidOption;
+import com.sensedia.university.functionalities.InputFuncionality;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.services.AlunoService;
 import com.sensedia.university.services.impl.AlunoServiceImpl;
@@ -10,12 +11,13 @@ import com.sensedia.university.utils.CheckIntegerInput;
 
 import java.util.Scanner;
 
-public class Input {
+public class InputFuncionalityImp implements InputFuncionality {
 
     Scanner scanner = new Scanner(System.in);
 
     AlunoService alunoService = new AlunoServiceImpl();
 
+    @Override
     public String inputString(Integer limit){
         String campo = scanner.nextLine();
 
@@ -36,6 +38,7 @@ public class Input {
         return campo;
     }
 
+    @Override
     public String inputMatricula(){
         Aluno aluno;
         String matricula;
@@ -55,9 +58,8 @@ public class Input {
         return matricula;
     }
 
+    @Override
     public Integer inputInteger() {
-        System.out.println("");
-        System.out.println("Digite a opção: ");
 
         while (true) {
 
@@ -91,6 +93,7 @@ public class Input {
 
     }
 
+    @Override
     public Integer inputIntegerWithRange(Integer maxRange){
         System.out.println("");
         System.out.println("Digite a opção: ");
