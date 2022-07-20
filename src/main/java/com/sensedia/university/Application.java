@@ -28,13 +28,13 @@ public class Application {
                     aluno.showAlunoOptions();
                     break;
                 case 2:
-                    curso.showCursoOptions();
+                    docente.showDocenteOptions();
                     break;
                 case 3:
-                    disciplina.showDisciplinaOptions();
+                    curso.showCursoOptions();
                     break;
                 case 4:
-                    docente.showDocenteOptions();
+                    disciplina.showDisciplinaOptions();
                     break;
             }
         }

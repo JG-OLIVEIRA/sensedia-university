@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fe2ce49-f223-441d-b962-96b633d56578" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/AlunoFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/CursoFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/DisciplinaFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/DocenteFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/InputFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/MenuFuncionality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/AlunoFuncionalityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/CursoFuncionalityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/DisciplinaFuncionalityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/DocenteFuncionalityImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/InputFuncionalityImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/MenuFuncionalityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Input.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/DocenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/DocenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/DocenteRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/DocenteRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/DocenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/DocenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/DocenteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/DocenteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Input.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/DocenteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/DocenteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/DocenteRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/repositories/impl/DocenteRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/DocenteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/DocenteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/DocenteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/services/impl/DocenteServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/impl/AlunoFuncionalityImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sensedia/university/functionalities/impl/AlunoFuncionalityImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +43,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sensedia.university.Application" />
