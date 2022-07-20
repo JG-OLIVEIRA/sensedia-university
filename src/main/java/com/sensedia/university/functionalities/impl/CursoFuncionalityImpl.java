@@ -16,6 +16,8 @@ public class CursoFuncionalityImpl implements CursoFuncionality {
 
     CursoService cursoService = new CursoServiceImpl();
 
+    AlunoService alunoService = new AlunoServiceImpl();
+
     @Override
     public void showCursoOptions(){
         System.out.println("");
@@ -96,8 +98,14 @@ public class CursoFuncionalityImpl implements CursoFuncionality {
         System.out.println("Cursos: ");
         System.out.println("");
 
-        System.out.println("");
-        showAllCursos();
+        List<Curso> cursos = alunoService.getCursosByMatricula(matricula);
+
+        if(cursos.isEmpty()){
+            System.out.println("Nenhum curso cadastrado!");
+        } else {
+            cursos.forEach(curso -> System.out.println(curso));
+        }
+
         System.out.println("");
     }
 
