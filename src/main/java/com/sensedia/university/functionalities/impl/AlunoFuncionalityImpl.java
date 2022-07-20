@@ -114,7 +114,21 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
         String matricula = input.inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
-        alunoService.addCurso(aluno, curso);
+        List<Curso> cursos = alunoService.getCursosByMatricula(matricula);
+
+        if(cursos.get(0).getId().equals(curso.getId()) || cursos.get(1).getId().equals(curso.getId())){
+            System.out.println("");
+            System.out.println("Aluno já cadastrado no curso de " + curso.getNome());
+            System.out.println("");
+        }else if(cursos.size() == 2){
+            System.out.println("");
+            System.out.println("Limite de 2 cursos atingido! ");
+            System.out.println("");
+        }else{
+            alunoService.addCurso(aluno, curso);
+            System.out.println("Aluno incluido no curso de " + curso.getNome());
+        }
+
     }
 
     @Override
