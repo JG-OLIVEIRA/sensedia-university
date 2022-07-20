@@ -100,12 +100,35 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
         System.out.println("Entre com o id do curso: ");
         Integer id = input.inputInteger();
 
+        Curso curso = cursoService.getCursoById(id);
+
+        while(curso.getNome() == null){
+            System.out.println("");
+            System.out.println("Nenhum curso com o id = " + id + " encontrado!");
+            System.out.println("");
+            System.out.println("Entre com o id válido: ");
+            id = input.inputInteger();
+            curso = cursoService.getCursoById(id);
+        }
+
         String matricula = input.inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
 
-        Curso curso = cursoService.getCursoById(id);
+        List<Curso> cursos = alunoService.getCursosByMatricula(matricula);
 
-        alunoService.addCurso(aluno, curso);
+        if(cursos.get(0).getId().equals(curso.getId()) || cursos.get(1).getId().equals(curso.getId())){
+            System.out.println("");
+            System.out.println("Aluno já cadastrado no curso de " + curso.getNome());
+            System.out.println("");
+        }else if(cursos.size() == 2){
+            System.out.println("");
+            System.out.println("Limite de 2 cursos atingido! ");
+            System.out.println("");
+        }else{
+            alunoService.addCurso(aluno, curso);
+            System.out.println("Aluno incluido no curso de " + curso.getNome());
+        }
+
     }
 
     @Override
@@ -128,7 +151,7 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
     @Override
     public void createAlunoDisciplina(){
         System.out.println("");
-        System.out.println("Incluino um aluno em uma disciplina...");
+        System.out.println("Incluindo um aluno em uma disciplina...");
         System.out.println("");
 
         System.out.println("");
@@ -138,10 +161,19 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
         System.out.println("Entre com o id da disciplina: ");
         Integer id = input.inputInteger();
 
+        Disciplina disciplina = disciplinaService.getDisciplinaById(id);
+
+        while(disciplina.getNome() == null){
+            System.out.println("");
+            System.out.println("Nenhuma disciplina com o id = " + id + " encontrado!");
+            System.out.println("");
+            System.out.println("Entre com o id válido: ");
+            id = input.inputInteger();
+            disciplina = disciplinaService.getDisciplinaById(id);
+        }
+
         String matricula = input.inputMatricula();
         Aluno aluno = alunoService.getAlunoByMatricula(matricula);
-
-        Disciplina disciplina = disciplinaService.getDisciplinaById(id);
 
         alunoService.addDisciplina(aluno, disciplina);
     }
