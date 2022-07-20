@@ -1,12 +1,19 @@
 package com.sensedia.university;
 
 import com.sensedia.university.exceptions.InvalidInput;
-import com.sensedia.university.functionalities.Menu;
+import com.sensedia.university.functionalities.*;
+import com.sensedia.university.functionalities.impl.*;
 
 public class Application {
 
     public static void main(String[] args) throws InvalidInput {
-        Menu menu = new Menu();
+
+        MenuFuncionality menu = new MenuFuncionalityImpl();
+
+        AlunoFuncionality aluno = new AlunoFuncionalityImpl();
+        CursoFuncionality curso = new CursoFuncionalityImpl();
+        DisciplinaFuncionality disciplina = new DisciplinaFuncionalityImpl();
+        DocenteFuncionality docente = new DocenteFuncionalityImpl();
 
         menu.showWelcomeMessage();
 
@@ -18,16 +25,16 @@ public class Application {
 
             switch (op){
                 case 1:
-                    menu.showAlunoOptions();
+                    aluno.showAlunoOptions();
                     break;
                 case 2:
-                    menu.showDocenteOptions();
+                    curso.showCursoOptions();
                     break;
                 case 3:
-                    menu.showCursoOptions();
+                    disciplina.showDisciplinaOptions();
                     break;
                 case 4:
-                    menu.showDisciplinaOptions();
+                    docente.showDocenteOptions();
                     break;
             }
         }

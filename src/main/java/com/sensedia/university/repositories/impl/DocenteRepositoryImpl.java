@@ -1,6 +1,8 @@
 package com.sensedia.university.repositories.impl;
 
 import com.sensedia.university.factory.ConnectionFactory;
+import com.sensedia.university.models.Aluno;
+import com.sensedia.university.models.Disciplina;
 import com.sensedia.university.models.Docente;
 import com.sensedia.university.repositories.DocenteRepository;
 
@@ -76,6 +78,59 @@ public class DocenteRepositoryImpl implements DocenteRepository {
         }
 
         return docentes;
+    }
+
+    @Override
+    public void addDisciplina(Docente docente, Disciplina disciplina) {
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "INSERT INTO docente_disciplina (DOCENTE_ID, CURSO_ID) values (?, ?)";
+
+            PreparedStatement myStat = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            myStat.setInt(1, docente.getId());
+            myStat.setInt(2, disciplina.getId());
+
+            myStat.execute();
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public Docente getDocenteByMatricula(String matricula) {
+        Docente docente = new Docente();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT * FROM docente WHERE matricula = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setString(1, matricula);
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            if(result.next()){
+                Integer id = result.getInt("ID");
+                String nome = result.getString("NOME");
+                String sobrenome = result.getString("SOBRENOME");
+                Integer ano = result.getInt("ANO");
+
+                docente.setId(id);
+                docente.setNome(nome);
+                docente.setSobrenome(sobrenome);
+                docente.setAno(ano);
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+
+        return docente;
     }
 
 
