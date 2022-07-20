@@ -78,10 +78,19 @@ public class DocenteFuncionalityImpl implements DocenteFuncionality {
         System.out.println("Entre com o id da disciplina: ");
         Integer id = input.inputInteger();
 
+        Disciplina disciplina = disciplinaService.getDisciplinaById(id);
+
+        while(disciplina.getNome() == null){
+            System.out.println("");
+            System.out.println("Nenhuma disciplina com o id = " + id + " encontrado!");
+            System.out.println("");
+            System.out.println("Entre com o id válido: ");
+            id = input.inputInteger();
+            disciplina = disciplinaService.getDisciplinaById(id);
+        }
+
         String matricula = input.inputMatricula();
         Docente docente = docenteService.getDocenteByMatricula(matricula);
-
-        Disciplina disciplina = disciplinaService.getDisciplinaById(id);
 
         docenteService.addDisciplina(docente, disciplina);
     }

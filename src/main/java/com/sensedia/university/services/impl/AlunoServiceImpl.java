@@ -3,6 +3,7 @@ package com.sensedia.university.services.impl;
 import com.sensedia.university.models.Aluno;
 import com.sensedia.university.models.Curso;
 import com.sensedia.university.models.Disciplina;
+import com.sensedia.university.repositories.AlunoRepository;
 import com.sensedia.university.repositories.impl.AlunoRepositoryImpl;
 import com.sensedia.university.services.AlunoService;
 import com.sensedia.university.utils.Generation;
@@ -11,7 +12,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class AlunoServiceImpl implements AlunoService {
-    AlunoRepositoryImpl alunoRepository = new AlunoRepositoryImpl();
+    AlunoRepository alunoRepository = new AlunoRepositoryImpl();
 
     @Override
     public Aluno createAluno(Aluno aluno) {
@@ -44,20 +45,7 @@ public class AlunoServiceImpl implements AlunoService {
 
     @Override
     public void addCurso(Aluno aluno, Curso curso) {
-        Integer count = alunoRepository.getCountOfCursoByAluno(aluno);
-
-        if(count > 2){
-            System.out.println("");
-            System.out.println("O aluno atingiu a contagem máxima de cursos (2)");
-            System.out.println("");
-        } else {
-            alunoRepository.addCurso(aluno, curso);
-
-            System.out.println("");
-            System.out.println("Aluno " + aluno.getNome() + " incluido no curso de " + curso.getNome());
-            System.out.println("");
-        }
-
+        alunoRepository.addCurso(aluno, curso);
     }
 
     @Override

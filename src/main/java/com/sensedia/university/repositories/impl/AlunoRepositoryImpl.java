@@ -145,7 +145,7 @@ public class AlunoRepositoryImpl implements AlunoRepository {
 
         try(Connection connection = ConnectionFactory.createConnection()){
 
-            String query = "SELECT curso.ID, curso.NOME, aluno.MATRICULA, aluno_curso.ALUNO_ID FROM curso, aluno, aluno_curso WHERE aluno.MATRICULA = ? AND aluno_curso.ALUNO_ID = aluno.ID";
+            String query = "SELECT curso.ID, curso.NOME FROM curso, aluno, aluno_curso WHERE aluno.MATRICULA = ? AND aluno_curso.ALUNO_ID = aluno.ID AND aluno_curso.CURSO_ID = curso.ID";
 
             PreparedStatement myStat = connection.prepareStatement(query);
 

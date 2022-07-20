@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3fe2ce49-f223-441d-b962-96b633d56578" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/CursoFuncionalityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/CursoFuncionalityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/AlunoFuncionalityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/AlunoFuncionalityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/DocenteFuncionalityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/functionalities/impl/DocenteFuncionalityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/repositories/impl/AlunoRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sensedia/university/services/impl/AlunoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
