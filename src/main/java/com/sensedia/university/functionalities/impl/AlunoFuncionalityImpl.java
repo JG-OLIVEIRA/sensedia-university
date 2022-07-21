@@ -35,11 +35,11 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
 
         System.out.println("");
         System.out.println("1 - Matricular um aluno");
-        System.out.println("2 - Incluir um aluno em um curso");
-        System.out.println("3 - Voltar ao menu");
-        System.out.println("4 - Visualizar todos os alunos");
-        System.out.println("5 - Visualizar todos os curso pela matricula do aluno");
-        System.out.println("6 - Incluir um aluno em uma disciplina");
+        System.out.println("2 - Visualizar todos os alunos");
+        System.out.println("3 - Visualizar todos os curso pela matricula do aluno");
+        System.out.println("4 - Incluir um aluno em um curso");
+        System.out.println("5 - Incluir um aluno em uma disciplina");
+        System.out.println("6 - Voltar ao menu");
         System.out.println("");
 
         Integer option = input.inputIntegerWithRange(6);
@@ -51,19 +51,19 @@ public class AlunoFuncionalityImpl implements AlunoFuncionality {
                 createAluno(aluno);
                 break;
             case 2:
-                createAlunoCurso();
-                break;
-            case 3:
-                break;
-            case 4:
                 showAllAlunos();
                 break;
-            case 5:
+            case 3:
                 String matricula = input.inputMatricula();
                 cursoFuncionality.showCursosByMatricula(matricula);
                 break;
-            case 6:
+            case 4:
+                createAlunoCurso();
+                break;
+            case 5:
                 createAlunoDisciplina();
+                break;
+            case 6:
                 break;
         }
     }
