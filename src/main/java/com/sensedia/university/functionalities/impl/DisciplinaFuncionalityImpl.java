@@ -50,11 +50,23 @@ public class DisciplinaFuncionalityImpl implements DisciplinaFuncionality {
     @Override
     public void createDisciplina(Disciplina disciplina){
         System.out.println("");
-        System.out.println("Incluino uma disciplina...");
+        System.out.println("Incluindo uma disciplina...");
         System.out.println("");
 
         System.out.println("Nome:");
         String nome = input.inputString(100);
+
+        while(true){
+
+            if(disciplinaService.getDisciplinaByNome(nome).getId() != null){
+                System.out.println("O disciplina já existe. Digite uma nova! ");
+                System.out.println("Nome:");
+                nome = input.inputString(50);
+            } else {
+                break;
+            }
+
+        }
 
         System.out.println("Turno:");
         String turno = input.inputString(2);
