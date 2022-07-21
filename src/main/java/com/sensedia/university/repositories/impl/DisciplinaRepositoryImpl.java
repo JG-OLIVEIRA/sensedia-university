@@ -26,7 +26,7 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
 
             ResultSet result = myStat.getGeneratedKeys();
 
-            if(result.next()){
+            while(result.next()){
                 disciplina.setId(result.getInt(1));
             }
 
@@ -52,20 +52,13 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
             while(result.next()){
                 Disciplina disciplina = new Disciplina();
 
-                Integer id = result.getInt("ID");
-                String nome = result.getString("NOME");
-                String turno = result.getString("TURNO");
-                Integer sala = result.getInt("SALA");
-
-                disciplina.setId(id);
-                disciplina.setNome(nome);
-                disciplina.setTurno(turno);
-                disciplina.setSala(sala);
+                disciplina.setId(result.getInt("ID"));
+                disciplina.setNome(result.getString("NOME"));
+                disciplina.setTurno(result.getString("TURNO"));
+                disciplina.setSala(result.getInt("SALA"));
 
                 disciplinas.add(disciplina);
             }
-
-
 
         } catch (SQLException ex){
             ex.printStackTrace();
@@ -90,20 +83,46 @@ public class DisciplinaRepositoryImpl implements DisciplinaRepository {
 
             ResultSet result = myStat.getResultSet();
 
-            if(result.next()){
-                String nome = result.getString("NOME");
-                String turno = result.getString("TURNO");
-                Integer sala = result.getInt("SALA");
-                disciplina.setNome(nome);
-                disciplina.setTurno(turno);
-                disciplina.setSala(sala);
+            while(result.next()){
+                disciplina.setId(result.getInt("ID"));
+                disciplina.setNome(result.getString("NOME"));
+                disciplina.setTurno(result.getString("TURNO"));
+                disciplina.setSala(result.getInt("SALA"));
             }
 
         } catch (SQLException ex){
             ex.printStackTrace();
         }
 
-        disciplina.setId(id);
+        return disciplina;
+    }
+
+    @Override
+    public Disciplina getDisciplinaByNome(String nome) {
+        Disciplina disciplina = new Disciplina();
+
+        try(Connection connection = ConnectionFactory.createConnection()){
+
+            String query = "SELECT * FROM disciplina WHERE nome = ?";
+
+            PreparedStatement myStat = connection.prepareStatement(query);
+
+            myStat.setString(1, nome);
+
+            myStat.execute();
+
+            ResultSet result = myStat.getResultSet();
+
+            while(result.next()){
+                disciplina.setId(result.getInt("ID"));
+                disciplina.setNome(result.getString("NOME"));
+                disciplina.setTurno(result.getString("TURNO"));
+                disciplina.setSala(result.getInt("SALA"));
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
 
         return disciplina;
     }

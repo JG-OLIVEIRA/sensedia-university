@@ -26,6 +26,11 @@ public class DisciplinaServiceImpl implements DisciplinaService {
     }
 
     @Override
+    public Disciplina getDisciplinaByNome(String nome) {
+        return disciplinaRepository.getDisciplinaByNome(nome);
+    }
+
+    @Override
     public Disciplina updateDisciplinaById(Disciplina disciplina) {
         return disciplinaRepository.updateDisciplinaById(disciplina);
     }
